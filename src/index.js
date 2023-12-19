@@ -12,25 +12,30 @@ function createPageStructure() {
   const btnContainer = createDiv();
   btnContainer.id = "btn-container";
 
-  //Create button elements
-  const homeBtn = createBtn("Home");
-  const menuBtn = createBtn("Menu");
-  const contactBtn = createBtn("Contact");
+  const createBtns = () => {
+    //Create button elements
+    const homeBtn = createBtn("Home");
+    const menuBtn = createBtn("Menu");
+    const contactBtn = createBtn("Contact");
 
-  // Add IDs
-  homeBtn.id = "home-btn";
-  menuBtn.id = "menu-btn";
-  contactBtn.id = "contact-btn";
+    // Add IDs
+    homeBtn.id = "home-btn";
+    menuBtn.id = "menu-btn";
+    contactBtn.id = "contact-btn";
 
-  // Add classes
-  homeBtn.classList.add("btn");
-  menuBtn.classList.add("btn");
-  contactBtn.classList.add("btn");
+    // Add classes
+    homeBtn.classList.add("btn");
+    menuBtn.classList.add("btn");
+    contactBtn.classList.add("btn");
 
+    return { homeBtn, menuBtn, contactBtn };
+  };
+
+  const createdBtns = createBtns();
   // Add tab buttons
-  btnContainer.appendChild(homeBtn);
-  btnContainer.appendChild(menuBtn);
-  btnContainer.appendChild(contactBtn);
+  btnContainer.appendChild(createdBtns.homeBtn);
+  btnContainer.appendChild(createdBtns.menuBtn);
+  btnContainer.appendChild(createdBtns.contactBtn);
 
   // Create main container for all tabs pages to go in
   const mainContainer = createDiv();
