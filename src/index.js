@@ -2,6 +2,7 @@
 
 import loadHome from "./modules/home";
 import loadMenu from "./modules/menu";
+import loadContact from "./modules/contact";
 import { createDiv } from "./modules/shared";
 import { createBtn } from "./modules/shared";
 
@@ -63,6 +64,7 @@ function choosePage() {
       } else if (e.target.id === "menu-btn") {
         pageStructure.content.appendChild(loadMenu());
       } else if (e.target.id === "contact-btn") {
+        pageStructure.content.appendChild(loadContact());
       }
     });
   });
