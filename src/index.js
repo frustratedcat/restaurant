@@ -1,6 +1,7 @@
 "use strict";
 
 import loadHome from "./modules/home";
+import loadMenu from "./modules/menu";
 import { createDiv } from "./modules/shared";
 import { createBtn } from "./modules/shared";
 
@@ -45,19 +46,22 @@ function createPageStructure() {
   content.appendChild(btnContainer);
   content.appendChild(mainContainer);
 
-  return content, btnContainer, mainContainer;
+  return { content, btnContainer, mainContainer };
 }
 
 // Choose page
 function choosePage() {
+  const pageStructure = createPageStructure();
+
   let btn = document.querySelectorAll(".btn");
 
   // Select page
   btn.forEach((i) => {
     i.addEventListener("click", (e) => {
       if (e.target.id === "home-btn") {
-        loadHome();
+        pageStructure.content.appendChild(loadHome());
       } else if (e.target.id === "menu-btn") {
+        pageStructure.content.appendChild(loadMenu());
       } else if (e.target.id === "contact-btn") {
       }
     });
@@ -66,7 +70,6 @@ function choosePage() {
 
 // Initate all
 function initiatePage() {
-  createPageStructure();
   choosePage();
 }
 

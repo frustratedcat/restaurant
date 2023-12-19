@@ -69,7 +69,7 @@ function createLocation() {
 }
 
 // Add all items to page
-function createHome() {
+export default function loadHome() {
   const homeContainer = createDiv();
   homeContainer.id = "home-container";
   homeContainer.appendChild(createH1("Welcome to the Frustrated Cat"));
@@ -80,10 +80,4 @@ function createHome() {
   homeContainer.appendChild(createLocation());
 
   return homeContainer;
-}
-
-// Push all items to home page
-export default function loadHome() {
-  const content = document.getElementById("content");
-  content.appendChild(createHome());
 }
