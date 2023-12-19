@@ -32,4 +32,19 @@ function createLi(text) {
   return li;
 }
 
-export { createDiv, createH1, createH2, createP, createUl, createLi };
+function createBtn(text) {
+  const btn = document.createElement("button");
+  btn.setAttribute("type", "button");
+  btn.textContent = text;
+  return btn;
+}
+
+export {
+  createDiv,
+  createH1,
+  createH2,
+  createP,
+  createUl,
+  createLi,
+  createBtn,
+};

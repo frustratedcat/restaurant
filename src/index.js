@@ -1,28 +1,21 @@
 "use strict";
 
 import loadHome from "./modules/home";
-
-// Create buttons
-function createBtns(text) {
-  const newBtn = document.createElement("button");
-  newBtn.setAttribute("type", "button");
-  newBtn.textContent = text;
-
-  return newBtn;
-}
+import { createDiv } from "./modules/shared";
+import { createBtn } from "./modules/shared";
 
 // Put buttons in content div
 function createPageStructure() {
   const content = document.getElementById("content");
 
   // Create button container
-  const btnContainer = document.createElement("div");
+  const btnContainer = createDiv();
   btnContainer.id = "btn-container";
 
   //Create button elements
-  const homeBtn = createBtns("Home");
-  const menuBtn = createBtns("Menu");
-  const contactBtn = createBtns("Contact");
+  const homeBtn = createBtn("Home");
+  const menuBtn = createBtn("Menu");
+  const contactBtn = createBtn("Contact");
 
   // Add IDs
   homeBtn.id = "home-btn";
@@ -40,7 +33,7 @@ function createPageStructure() {
   btnContainer.appendChild(contactBtn);
 
   // Create main container for all tabs pages to go in
-  const mainContainer = document.createElement("div");
+  const mainContainer = createDiv();
   mainContainer.id = "main-container";
 
   // Append items
