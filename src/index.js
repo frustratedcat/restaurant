@@ -1,5 +1,6 @@
 "use strict";
 
+// Import items
 import loadHome from "./modules/home";
 import loadMenu from "./modules/menu";
 import loadContact from "./modules/contact";
@@ -33,8 +34,8 @@ function createPageStructure() {
     return { homeBtn, menuBtn, contactBtn };
   };
 
-  const createdBtns = createBtns();
   // Add tab buttons
+  const createdBtns = createBtns();
   btnContainer.appendChild(createdBtns.homeBtn);
   btnContainer.appendChild(createdBtns.menuBtn);
   btnContainer.appendChild(createdBtns.contactBtn);
@@ -53,7 +54,6 @@ function createPageStructure() {
 // Choose page
 function choosePage() {
   const pageStructure = createPageStructure();
-
   let btn = document.querySelectorAll(".btn");
 
   // Select page
