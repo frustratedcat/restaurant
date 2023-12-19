@@ -1,39 +1,12 @@
 "use strict";
 
-// Create all elements
-function createDiv() {
-  const div = document.createElement("div");
-  return div;
-}
-
-function createH1(text) {
-  const h1 = document.createElement("h1");
-  h1.textContent = text;
-  return h1;
-}
-
-function createH2(text) {
-  const h2 = document.createElement("h2");
-  h2.textContent = text;
-  return h2;
-}
-
-function createP(text) {
-  const p = document.createElement("p");
-  p.textContent = text;
-  return p;
-}
-
-function createUl() {
-  const ul = document.createElement("ul");
-  return ul;
-}
-
-function createLi(text) {
-  const li = document.createElement("li");
-  li.textContent = text;
-  return li;
-}
+// Import functions
+import { createDiv } from "./shared";
+import { createH1 } from "./shared";
+import { createH2 } from "./shared";
+import { createP } from "./shared";
+import { createUl } from "./shared";
+import { createLi } from "./shared";
 
 // Create about section of page
 function createAbout() {
@@ -83,13 +56,13 @@ function createHours() {
 }
 
 // Create contact section of page
-function createContact() {
+function createLocation() {
   // Create div container and add ID
   const contactContainer = createDiv();
-  contactContainer.id = "hours-container";
+  contactContainer.id = "location-container";
 
   // Append items
-  contactContainer.appendChild(createH2("Contact:"));
+  contactContainer.appendChild(createH2("Location:"));
   contactContainer.appendChild(createP("123 nunya biz"));
 
   return contactContainer;
@@ -97,26 +70,20 @@ function createContact() {
 
 // Add all items to page
 function createHome() {
-  const mainContainer = createDiv();
-  mainContainer.id = "main-container";
-  mainContainer.appendChild(createH1("Welcome to the Frustrated Cat"));
+  const homeContainer = createDiv();
+  homeContainer.id = "home-container";
+  homeContainer.appendChild(createH1("Welcome to the Frustrated Cat"));
 
-  // Append About section
-  mainContainer.appendChild(createAbout());
+  // Append each section
+  homeContainer.appendChild(createAbout());
+  homeContainer.appendChild(createHours());
+  homeContainer.appendChild(createLocation());
 
-  //Append Hours section
-  mainContainer.appendChild(createHours());
-
-  //Append Contact section
-  mainContainer.appendChild(createContact());
-
-  return mainContainer;
+  return homeContainer;
 }
 
-// Push all items to main page
-function loadHome() {
+// Push all items to home page
+export default function loadHome() {
   const content = document.getElementById("content");
   content.appendChild(createHome());
 }
-
-export default loadHome;
