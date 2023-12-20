@@ -48,6 +48,9 @@ function createPageStructure() {
   content.appendChild(btnContainer);
   content.appendChild(mainContainer);
 
+  // Append loadHome to show it when page is initially opened
+  content.appendChild(loadHome());
+
   return { content, btnContainer, mainContainer };
 }
 
