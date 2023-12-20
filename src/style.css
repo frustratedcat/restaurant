@@ -149,9 +149,9 @@ body {
 }
 
 .btn:active {
-  background-color: var(--main-green);
-  color: var(--main-dark-gray);
-  border-color: var(--main-dark-gray);
+  background-color: var(--main-dark-blue);
+  color: var(--main-light-gray);
+  border-color: var(--main-light-gray);
 }
 
 #main-container {
@@ -161,4 +161,41 @@ body {
   margin: 20px;
   padding: 20px;
   border: 10px solid var(--main-light-gray);
+}
+
+#home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#home-container > h1 {
+  margin: 10px 0 20px 0;
+  font-size: 2rem;
+}
+
+.home-grid {
+  width: 80%;
+  margin: 10px 0;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+
+#about-container > h2,
+#hours-container > h2,
+#location-container > h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+#about-container > p,
+#hours-container > ul > li,
+#location-container > p {
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+ul > li {
+  list-style: none;
 }

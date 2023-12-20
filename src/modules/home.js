@@ -13,6 +13,7 @@ function createAbout() {
   // Create div container and add ID
   const aboutContainer = createDiv();
   aboutContainer.id = "about-container";
+  aboutContainer.classList.add("home-grid");
 
   // Append items
   aboutContainer.appendChild(createH2("About:"));
@@ -30,6 +31,7 @@ function createHours() {
   // Create div container and add ID
   const hoursContainer = createDiv();
   hoursContainer.id = "hours-container";
+  hoursContainer.classList.add("home-grid");
 
   // Append items
   hoursContainer.appendChild(createH2("Hours:"));
@@ -38,13 +40,13 @@ function createHours() {
   const createList = () => {
     const list = createUl();
 
-    list.appendChild(createLi("Monday"));
-    list.appendChild(createLi("Tuesday"));
-    list.appendChild(createLi("Wednesday"));
-    list.appendChild(createLi("Thursday"));
-    list.appendChild(createLi("Friday"));
-    list.appendChild(createLi("Saturday"));
-    list.appendChild(createLi("Sunday"));
+    list.appendChild(createLi("Monday: 8AM - 5PM"));
+    list.appendChild(createLi("Tuesday: 8AM - 10PM"));
+    list.appendChild(createLi("Wednesday: 8AM - 10PM"));
+    list.appendChild(createLi("Thursday: 8AM - 10PM"));
+    list.appendChild(createLi("Friday: 8AM - 10PM"));
+    list.appendChild(createLi("Saturday: 8AM - Until we say go away"));
+    list.appendChild(createLi("Sunday: Go away"));
 
     return list;
   };
@@ -60,6 +62,7 @@ function createLocation() {
   // Create div container and add ID
   const contactContainer = createDiv();
   contactContainer.id = "location-container";
+  contactContainer.classList.add("home-grid");
 
   // Append items
   contactContainer.appendChild(createH2("Location:"));
