@@ -49,7 +49,7 @@ function createPageStructure() {
   content.appendChild(mainContainer);
 
   // Append loadHome to show it when page is initially opened
-  content.appendChild(loadHome());
+  mainContainer.appendChild(loadHome());
 
   return { content, btnContainer, mainContainer };
 }
@@ -63,37 +63,43 @@ function choosePage() {
   btn.forEach((i) => {
     i.addEventListener("click", (e) => {
       if (e.target.id === "home-btn") {
-        if (pageStructure.content.childNodes.length > 2) {
-          if (pageStructure.content.childNodes[2].id !== "home-container") {
-            pageStructure.content.removeChild(
-              pageStructure.content.childNodes[2]
+        if (pageStructure.mainContainer.childNodes.length > 0) {
+          if (
+            pageStructure.mainContainer.childNodes[0].id !== "home-container"
+          ) {
+            pageStructure.mainContainer.removeChild(
+              pageStructure.mainContainer.childNodes[0]
             );
-            pageStructure.content.appendChild(loadHome());
+            pageStructure.mainContainer.appendChild(loadHome());
           }
-        } else if (pageStructure.content.childNodes.length === 2) {
-          pageStructure.content.appendChild(loadHome());
+        } else if (pageStructure.mainContainer.childNodes.length === 0) {
+          pageStructure.mainContainer.appendChild(loadHome());
         }
       } else if (e.target.id === "menu-btn") {
-        if (pageStructure.content.childNodes.length > 2) {
-          if (pageStructure.content.childNodes[2].id !== "menu-container") {
-            pageStructure.content.removeChild(
-              pageStructure.content.childNodes[2]
+        if (pageStructure.mainContainer.childNodes.length > 0) {
+          if (
+            pageStructure.mainContainer.childNodes[0].id !== "menu-container"
+          ) {
+            pageStructure.mainContainer.removeChild(
+              pageStructure.mainContainer.childNodes[0]
             );
-            pageStructure.content.appendChild(loadMenu());
+            pageStructure.mainContainer.appendChild(loadMenu());
           }
-        } else if (pageStructure.content.childNodes.length === 2) {
-          pageStructure.content.appendChild(loadMenu());
+        } else if (pageStructure.mainContainer.childNodes.length === 0) {
+          pageStructure.mainContainer.appendChild(loadMenu());
         }
       } else if (e.target.id === "contact-btn") {
-        if (pageStructure.content.childNodes.length > 2) {
-          if (pageStructure.content.childNodes[2].id !== "contact-container") {
-            pageStructure.content.removeChild(
-              pageStructure.content.childNodes[2]
+        if (pageStructure.mainContainer.childNodes.length > 0) {
+          if (
+            pageStructure.mainContainer.childNodes[0].id !== "contact-container"
+          ) {
+            pageStructure.mainContainer.removeChild(
+              pageStructure.mainContainer.childNodes[0]
             );
-            pageStructure.content.appendChild(loadContact());
+            pageStructure.mainContainer.appendChild(loadContact());
           }
-        } else if (pageStructure.content.childNodes.length === 2) {
-          pageStructure.content.appendChild(loadContact());
+        } else if (pageStructure.mainContainer.childNodes.length === 0) {
+          pageStructure.mainContainer.appendChild(loadContact());
         }
       }
     });
