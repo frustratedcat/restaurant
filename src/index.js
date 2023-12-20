@@ -1,6 +1,7 @@
 "use strict";
 
 // Import items
+import "./style.css";
 import loadHome from "./modules/home";
 import loadMenu from "./modules/menu";
 import loadContact from "./modules/contact";
