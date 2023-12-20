@@ -60,11 +60,38 @@ function choosePage() {
   btn.forEach((i) => {
     i.addEventListener("click", (e) => {
       if (e.target.id === "home-btn") {
-        pageStructure.content.appendChild(loadHome());
+        if (pageStructure.content.childNodes.length > 2) {
+          if (pageStructure.content.childNodes[2].id !== "home-container") {
+            pageStructure.content.removeChild(
+              pageStructure.content.childNodes[2]
+            );
+            pageStructure.content.appendChild(loadHome());
+          }
+        } else if (pageStructure.content.childNodes.length === 2) {
+          pageStructure.content.appendChild(loadHome());
+        }
       } else if (e.target.id === "menu-btn") {
-        pageStructure.content.appendChild(loadMenu());
+        if (pageStructure.content.childNodes.length > 2) {
+          if (pageStructure.content.childNodes[2].id !== "menu-container") {
+            pageStructure.content.removeChild(
+              pageStructure.content.childNodes[2]
+            );
+            pageStructure.content.appendChild(loadMenu());
+          }
+        } else if (pageStructure.content.childNodes.length === 2) {
+          pageStructure.content.appendChild(loadMenu());
+        }
       } else if (e.target.id === "contact-btn") {
-        pageStructure.content.appendChild(loadContact());
+        if (pageStructure.content.childNodes.length > 2) {
+          if (pageStructure.content.childNodes[2].id !== "contact-container") {
+            pageStructure.content.removeChild(
+              pageStructure.content.childNodes[2]
+            );
+            pageStructure.content.appendChild(loadContact());
+          }
+        } else if (pageStructure.content.childNodes.length === 2) {
+          pageStructure.content.appendChild(loadContact());
+        }
       }
     });
   });
