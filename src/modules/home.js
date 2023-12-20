@@ -40,13 +40,48 @@ function createHours() {
   const createList = () => {
     const list = createUl();
 
-    list.appendChild(createLi("Monday: 8AM - 5PM"));
-    list.appendChild(createLi("Tuesday: 8AM - 10PM"));
-    list.appendChild(createLi("Wednesday: 8AM - 10PM"));
-    list.appendChild(createLi("Thursday: 8AM - 10PM"));
-    list.appendChild(createLi("Friday: 8AM - 10PM"));
-    list.appendChild(createLi("Saturday: 8AM - Until we say go away"));
-    list.appendChild(createLi("Sunday: Go away"));
+    const createMonday = createLi();
+    createMonday.classList.add("hours-of-operation");
+    createMonday.appendChild(createP("Monday"));
+    createMonday.appendChild(createP("8am - 6pm"));
+
+    const createTuesday = createLi();
+    createTuesday.classList.add("hours-of-operation");
+    createTuesday.appendChild(createP("Tuesday"));
+    createTuesday.appendChild(createP("8am - 6pm"));
+
+    const createWednesday = createLi();
+    createWednesday.classList.add("hours-of-operation");
+    createWednesday.appendChild(createP("Wednesday"));
+    createWednesday.appendChild(createP("8am - 6pm"));
+
+    const createThursday = createLi();
+    createThursday.classList.add("hours-of-operation");
+    createThursday.appendChild(createP("Thursday"));
+    createThursday.appendChild(createP("8am - 6pm"));
+
+    const createFriday = createLi();
+    createFriday.classList.add("hours-of-operation");
+    createFriday.appendChild(createP("Friday"));
+    createFriday.appendChild(createP("8am - 6pm"));
+
+    const createSaturday = createLi();
+    createSaturday.classList.add("hours-of-operation");
+    createSaturday.appendChild(createP("Saturday"));
+    createSaturday.appendChild(createP("8am - Until we say go away"));
+
+    const createSunday = createLi();
+    createSunday.classList.add("hours-of-operation");
+    createSunday.appendChild(createP("Sunday"));
+    createSunday.appendChild(createP("Go away"));
+
+    list.appendChild(createMonday);
+    list.appendChild(createTuesday);
+    list.appendChild(createWednesday);
+    list.appendChild(createThursday);
+    list.appendChild(createFriday);
+    list.appendChild(createSaturday);
+    list.appendChild(createSunday);
 
     return list;
   };
