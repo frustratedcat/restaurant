@@ -101,7 +101,7 @@ function createLocation() {
 
   // Append items
   contactContainer.appendChild(createH2("Location:"));
-  contactContainer.appendChild(createP("123 nunya biz"));
+  contactContainer.appendChild(createP("123 Nunya Biz"));
 
   return contactContainer;
 }

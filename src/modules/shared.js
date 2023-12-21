@@ -15,6 +15,12 @@ function createH2(text) {
   return h2;
 }
 
+function createH3(text) {
+  const h3 = document.createElement("h2");
+  h3.textContent = text;
+  return h3;
+}
+
 function createP(text) {
   const p = document.createElement("p");
   p.textContent = text;
@@ -43,6 +49,7 @@ export {
   createDiv,
   createH1,
   createH2,
+  createH3,
   createP,
   createUl,
   createLi,
