@@ -96,7 +96,7 @@ function createDeset() {
   };
 
   // Append items
-  dessertSection.appendChild(createH2("desserts:"));
+  dessertSection.appendChild(createH2("Desserts:"));
   dessertSection.appendChild(createList());
 
   return dessertSection;

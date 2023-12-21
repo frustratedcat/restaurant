@@ -184,6 +184,7 @@ body {
 h1 {
   margin: 10px 0 20px 0;
   font-size: 2rem;
+  text-align: center;
 }
 
 .home-grid,
@@ -260,4 +261,25 @@ a:focus {
 
 a:active {
   color: var(--main-green);
+}
+
+@media (max-width: 400px) {
+  #content {
+    width: 390px;
+  }
+
+  .btn {
+    margin: auto;
+  }
+
+  .home-grid,
+  .menu-grid,
+  .contact-grid {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hours-of-operation {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
