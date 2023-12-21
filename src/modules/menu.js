@@ -12,6 +12,7 @@ import { createLi } from "./shared";
 function createBeverages() {
   const beveragesSection = createDiv();
   beveragesSection.id = "beverages-section";
+  beveragesSection.classList.add("menu-grid");
 
   // Create list of items
   const createList = () => {
@@ -25,6 +26,7 @@ function createBeverages() {
   };
 
   // Append items
+  beveragesSection.appendChild(createH2("Beverages:"));
   beveragesSection.appendChild(createList());
 
   return beveragesSection;
@@ -34,6 +36,7 @@ function createBeverages() {
 function createAppetizers() {
   const appetizersSection = createDiv();
   appetizersSection.id = "appetizers-section";
+  appetizersSection.classList.add("menu-grid");
 
   // Create list of items
   const createList = () => {
@@ -47,15 +50,17 @@ function createAppetizers() {
   };
 
   //Append items
+  appetizersSection.appendChild(createH2("Appetizers:"));
   appetizersSection.appendChild(createList());
 
   return appetizersSection;
 }
 
-// Create entre section
-function createEntre() {
-  const entreSection = createDiv();
-  entreSection.id = "entre-section";
+// Create entree section
+function createEntree() {
+  const entreeSection = createDiv();
+  entreeSection.id = "entree-section";
+  entreeSection.classList.add("menu-grid");
 
   const createList = () => {
     const list = createUl();
@@ -68,15 +73,17 @@ function createEntre() {
   };
 
   // Append items
-  entreSection.appendChild(createList());
+  entreeSection.appendChild(createH2(`Entr\u00e9es:`));
+  entreeSection.appendChild(createList());
 
-  return entreSection;
+  return entreeSection;
 }
 
-// Create desert section
+// Create dessert section
 function createDeset() {
-  const desertSection = createDiv();
-  desertSection.id = "desert-section";
+  const dessertSection = createDiv();
+  dessertSection.id = "dessert-section";
+  dessertSection.classList.add("menu-grid");
 
   const createList = () => {
     const list = createUl();
@@ -89,9 +96,10 @@ function createDeset() {
   };
 
   // Append items
-  desertSection.appendChild(createList());
+  dessertSection.appendChild(createH2("desserts:"));
+  dessertSection.appendChild(createList());
 
-  return desertSection;
+  return dessertSection;
 }
 
 // Add all items to page
@@ -103,7 +111,7 @@ export default function loadMenu() {
   // Append items
   menuContainer.appendChild(createBeverages());
   menuContainer.appendChild(createAppetizers());
-  menuContainer.appendChild(createEntre());
+  menuContainer.appendChild(createEntree());
   menuContainer.appendChild(createDeset());
 
   return menuContainer;
